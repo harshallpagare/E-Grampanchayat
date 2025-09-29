@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gram Panchayat - Official</title>
+  <meta name="description" content="Responsive Gram Panchayat website (English + Marathi) - ready to deploy" />
+  <!--Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!--Stylesheet -->
+  <link href="style.css" rel="stylesheet"> 
+  <link href="lightbox.css" rel="stylesheet">
+</head>
+<body data-lang="en">
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">GP</div>
+        <div>
+          <div class="muted" data-i18n="subTitle">Demo Gram Panchayat</div>
+          <strong data-i18n="villageName">Panchayat Name</strong>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home" data-i18n="navHome">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-trigger" data-i18n="navSchemes">Schemes <i class="fa-solid fa-chevron-down ms-1"></i></a>
+            <div class="dropdown-menu" role="menu" aria-label="Schemes">
+              <a href="#" data-i18n="scWSPtitle">Water Supply Project</a>
+              <a href="#" data-i18n="scVRMtitle">Village Road Improvement</a>
+              <a href="#" data-i18n="scPMAtitle">PradhanMantri Awas</a>
+              <a href="#" data-i18n="scJJMtitle">Jal-Jivan Mission</a>
+              <a href="#" data-i18n="scSDtitle">Sanitation Drive</a>
+            </div>
+          </li>
+          <li><a href="#administration" data-i18n="navAdmin">Administration</a></li>
+          <li><a href="#gallery" data-i18n="navGallery">Gallery</a></li>
+          <li><a href="#about" data-i18n="navAbout">About</a></li>
+          <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="lang-toggle" id="langToggle" title="Toggle language">EN / मराठी</div>
+        <div class="chip" id="tenureChip" data-i18n="electionTenure">Elected: 2022 - 2027</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO / SLIDER -->
+    <section id="home" class="hero" aria-label="Hero banner">
+      <div class="slides" id="slides">
+        <!-- <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=60')"> -->
+           <div class="slide" style="background-image:url('Images/bannerImage_1.png')">
+          <div class="caption"><h1 data-i18n="hero1">Welcome to Our Gram Panchayat</h1><p class="muted" data-i18n="hero1sub">Serving the village with transparency and care</p></div>
+        </div>
+        <!-- <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1523995462485-54e6f5f1b9a2?auto=format&fit=crop&w=1400&q=60')"> -->
+          <div class="slide" style="background-image:url('Images/bannerImage_2.jpg')">
+          <div class="caption"><h1 data-i18n="hero2">Local Development & Welfare</h1><p class="muted" data-i18n="hero2sub">Projects and schemes for every household</p></div>
+        </div>
+        <!-- <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=60')"> -->
+          <div class="slide" style="background-image:url('Images/bannerImage_3.jpeg')">
+          <div class="caption"><h1 data-i18n="hero3">Community Events & Gallery</h1><p class="muted" data-i18n="hero3sub">Memories and celebrations of our village</p></div>
+        </div>
+        <!-- <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1400&q=60')"> -->
+           <div class="slide" style="background-image:url('Images/bannerImage.png')">
+          <div class="caption"><h1 data-i18n="hero4">Contact & Reachability</h1><p class="muted" data-i18n="hero4sub">Office hours and how to reach us</p></div>
+        </div>
+      </div>
+      <div class="overlay"></div>
+      <div class="dots" id="dots" aria-hidden="false"></div>
+    </section>
+
+    <!-- SCHEMES -->
+    <section id="schemes">
+      <div class="section-title"><h2 data-i18n="schemesTitle">Government Schemes</h2><div class="muted" data-i18n="schemesSubtitle">(Completed, Ongoing & Future)</div></div>
+
+      <div id="schemes-completed">
+        <!-- <h3 data-i18n="schemesCompleted">Completed Schemes</h3> -->
+        <div class="cards" id="completedCards">
+          <!-- Sample cards - replace images/text as needed -->
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/jal-jivan_mission" alt="Scheme image">
+            <h3 data-i18n="sc1title">Water Supply Project</h3>
+            <p data-i18n="sc1desc">A completed project that securely provides drinking water to all households.</p>
+          </article>
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/pmgsy-e89d506d.jpg" alt="Scheme image">
+            <h3 data-i18n="sc2title">Village Road Improvement</h3>
+            <p data-i18n="sc2desc">Improved connectivity with permanent pavements and drainage.</p>
+          </article>
+        </div>
+      </div>
+
+      <div id="schemes-ongoing" style="margin-top:22px">
+        <!-- <h3 data-i18n="schemesOngoing">Ongoing Schemes</h3> -->
+        <div class="cards" id="ongoingCards">
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1542223616-8c1f6b7b3b4b?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/sanitationDrive" alt="Scheme image">
+            <h3 data-i18n="sc3title">Sanitation Drive</h3>
+            <p data-i18n="sc3desc">Promoting cleanliness and building household toilets.</p>
+          </article>
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1542293787938-c9e299b88095?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/CropYojana.png" alt="Scheme image">
+            <h3 data-i18n="sc4title">Crop Support Program</h3>
+            <p data-i18n="sc4desc">Support for farmers with inputs and training.</p>
+          </article>
+        </div>
+      </div>
+
+      <div id="schemes-future" style="margin-top:22px">
+        <!-- <h3 data-i18n="schemesFuture">Future Schemes</h3> -->
+        <div class="cards" id="futureCards">
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/jal-jivan_mission" alt="Scheme image">
+            <h3 data-i18n="sc5title">Jal-Jivan Mission</h3>
+            <p data-i18n="sc5desc">Plan for a multi-purpose hall for events and training.</p>
+          </article>
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/solarstreet.jpg" alt="Scheme image">
+            <h3 data-i18n="sc6title">Solar Street Lighting</h3>
+            <p data-i18n="sc6desc">Proposal to install energy-efficient solar lights.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMINISTRATION -->
+    <section id="administration">
+      <div class="section-title"><h2 data-i18n="adminTitle">Administration</h2><div class="muted" data-i18n="adminSub">Representative contacts and roles</div></div>
+      <div class="team-grid" id="team">
+        <!-- sample person -->
+        <div class="person">
+          <img src="Images/sarpanch.png" alt="Sarpanch">
+          <h4 data-i18n="person1name">Mr. Ramesh Patil</h4>
+          <p data-i18n="person1role">Sarpanch</p>
+          <p class="muted">📞 <span data-i18n="person1phone">+91-9900000011</span></p>
+        </div>
+        <div class="person">
+          <img src="Images/upsarpach.png" alt="Deputy">
+          <h4 data-i18n="person2name">Mrs. Sunita More</h4>
+          <p data-i18n="person2role">Deputy Sarpanch</p>
+          <p class="muted">📞 <span data-i18n="person2phone">+91-9888888881</span></p>
+        </div>
+        <div class="person">
+          <img src="Images/Gramsevak.png" alt="Secretary">
+          <h4 data-i18n="person3name">Mr. Manoj Kulkarni</h4>
+          <p data-i18n="person3role">Panchayat Secretary</p>
+          <p class="muted">📞 <span data-i18n="person3phone">+91-9988776655</span></p>
+        </div> 
+        <div class="person">
+          <img src="Images/sachiv.png" alt="Sarpanch">
+          <h4 data-i18n="person1name">Mr. Ramesh Patil</h4>
+          <p data-i18n="person1role">Sarpanch</p>
+          <p class="muted">📞 <span data-i18n="person1phone">+91-9812345678</span></p>
+        </div>
+        <div class="person">
+          <img src="Images/sabhasad.png" alt="Deputy">
+          <h4 data-i18n="person2name">Mrs. Sunita More</h4>
+          <p data-i18n="person2role">Deputy Sarpanch</p>
+          <p class="muted">📞 <span data-i18n="person2phone">+91-9100000002</span></p>
+        </div>
+        <div class="person">
+          <img src="Images/Sabhasad_.png" alt="Secretary">
+          <h4 data-i18n="person3name">Mr. Manoj Kulkarni</h4>
+          <p data-i18n="person3role">Panchayat Secretary</p>
+          <p class="muted">📞 <span data-i18n="person3phone">+91-9988333333</span></p>
+        </div>
+        <div class="person">
+          <img src="Images/sarpanch.png" alt="Sarpanch">
+          <h4 data-i18n="person1name">Mr. Ramesh Patil</h4>
+          <p data-i18n="person1role">Sarpanch</p>
+          <p class="muted">📞 <span data-i18n="person1phone">+91-9898989898</span></p>
+        </div>
+        <div class="person">
+          <img src="Images/sabhasad.png" alt="Deputy">
+          <h4 data-i18n="person2name">Mrs. Sunita More</h4>
+          <p data-i18n="person2role">Deputy Sarpanch</p>
+          <p class="muted">📞 <span data-i18n="person2phone">+91-9199555555</span></p>
+        </div>
+        <div class="person">
+          <img src="Images/upsarpach.png" alt="Secretary">
+          <h4 data-i18n="person3name">Mr. Manoj Kulkarni</h4>
+          <p data-i18n="person3role">Panchayat Secretary</p>
+          <p class="muted">📞 <span data-i18n="person3phone">+91-9988776655</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-title"><h2 data-i18n="galleryTitle">Gallery</h2><div class="muted" data-i18n="gallerySub">Events & Special Moments</div></div>
+      <div class="gallery" id="galleryGrid">
+        <!-- <img class="gimg" src="https://images.unsplash.com/photo-1526481280698-73f6f5f6b8b6?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1509099836639-18ba8d2b0f71?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1526481280698-73f6f5f6b8b6?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1509099836639-18ba8d2b0f71?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1526481280698-73f6f5f6b8b6?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1509099836639-18ba8d2b0f71?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1509099836639-18ba8d2b0f71?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1526481280698-73f6f5f6b8b6?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1509099836639-18ba8d2b0f71?auto=format&fit=crop&w=800&q=60" alt="event">
+        <img class="gimg" src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=60" alt="event"> -->
+        <a href="Images/Gallery_1" data-lightbox="models" data-title="Caption1">
+          <img class="gimg" src="Images/Gallery_1" alt="event">
+        </a>
+         
+         <a href="Images/gallery_2" data-lightbox="models" data-title="Caption1">
+           <img class="gimg" src="Images/gallery_2" alt="event">
+         </a>
+       
+        <a href="Images/gallery_3" data-lightbox="models" data-title="Caption1">
+          <img class="gimg" src="Images/gallery_3" alt="event">
+        </a>
+        
+        <a href="Images/gallery_4" data-lightbox="models" data-title="Caption4">
+          <img class="gimg" src="Images/gallery_4" alt="event">
+        </a>
+        
+        <a href="Images/gallery_5" data-lightbox="models" data-title="Caption5">
+          <img class="gimg" src="Images/gallery_5" alt="event">
+        </a>
+        
+        <a href="Images/gallery_6.jpg" data-lightbox="models" data-title="Caption6">
+          <img class="gimg" src="Images/gallery_6.jpg" alt="event">
+        </a>
+        
+        <a href="Images/gallery_7" data-lightbox="models" data-title="Caption7">
+           <img class="gimg" src="Images/gallery_7" alt="event">
+        </a>
+       
+        <a href="Images/gallery_8" data-lightbox="models" data-title="Caption8">
+          <img class="gimg" src="Images/gallery_8" alt="event">
+        </a>
+        
+        <a href="Images/gallery_2" data-lightbox="models" data-title="Caption9">
+          <img class="gimg" src="Images/gallery_2" alt="event">
+        </a>
+        
+        <a href="Images/gallery_9" data-lightbox="models" data-title="Caption10">
+          <img class="gimg" src="Images/gallery_9" alt="event">
+        </a>
+        
+        <a href="Images/gallery_10" data-lightbox="models" data-title="Caption11">
+          <img class="gimg" src="Images/gallery_10" alt="event">
+        </a>
+        
+        <a href="Images/gallery_11" data-lightbox="models" data-title="Caption12">
+          <img class="gimg" src="Images/gallery_11" alt="event">
+        </a>
+        
+        <a href="Images/gallery_12" data-lightbox="models" data-title="Caption13">
+          <img class="gimg" src="Images/gallery_12" alt="event">
+        </a>
+        
+        <a href="Images/gallery_6.jpg" data-lightbox="models" data-title="Caption14">
+           <img class="gimg" src="Images/gallery_6.jpg" alt="event">
+        </a>
+       
+        <a href="Images/gallery_3" data-lightbox="models" data-title="Caption15">
+          <img class="gimg" src="Images/gallery_3" alt="event">
+        </a>
+        
+        <a href="Images/gallery_2" data-lightbox="models" data-title="Caption16">
+          <img class="gimg" src="Images/gallery_2" alt="event">
+        </a>
+        
+        <a href="Images/gallery_5" data-lightbox="models" data-title="Caption17">
+          <img class="gimg" src="Images/gallery_5" alt="event">
+        </a>
+        
+        <a href="Images/gallery_7" data-lightbox="models" data-title="Caption18">
+          <img class="gimg" src="Images/gallery_7" alt="event">
+        </a>
+        
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title"><h2 data-i18n="aboutTitle">About Panchayat</h2><div class="muted" data-i18n="aboutSub">History, tenure and quick facts</div></div>
+      <div class="two-col">
+        <div class="card contact-card">
+          <h3 data-i18n="aboutHeading">Overview</h3>
+          <p data-i18n="aboutText">This Gram Panchayat is responsible for the local administration of the village. It manages civic services, local development projects and welfare schemes. The elected members serve a five-year tenure as per state legislation. </p>
+          <p data-i18n="aboutText">This Gram Panchayat is responsible for the local administration of the village. It manages civic services, local development projects and welfare schemes. The elected members serve a five-year tenure as per state legislation. </p>
+          <p data-i18n="aboutText">This Gram Panchayat is responsible for the local administration of the village. It manages civic services, local development projects and welfare schemes. The elected members serve a five-year tenure as per state legislation. </p>
+        </div>
+        <div class="card contact-card">
+          <h3 data-i18n="about2">Tenure & Key Info</h3>
+          <p><strong data-i18n="electionTenureLabel">Current Tenure:</strong> <span data-i18n="electionTenure">2022 - 2027</span></p>
+          <p><strong data-i18n="officeHoursLabel">Office Hours:</strong> Mon - Fri, 10:00 AM - 5:00 PM</p>
+          <p><strong data-i18n="populationLabel"> Village Population (Approx.):</strong> 3,842</p>
+          <p><strong data-i18n="malePopulationLabel"> Male Population (Approx.):</strong> 2060</p>
+          <p><strong data-i18n="femalePopulationLabel"> Female Population (Approx.):</strong> 1782</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title"><h2 data-i18n="contactTitle">Contact Us</h2><div class="muted" data-i18n="contactSub">Address, phone and map</div></div>
+      <div class="two-col">
+        <div class="contact-card">
+          <p><strong data-i18n="addressLabel">Address:</strong> Gram Panchayat Office, Demo Village, Taluka, District, Maharashtra</p>
+          <p><strong data-i18n="phoneLabel">Phone:</strong> +91-020-12345678</p>
+          <p><strong data-i18n="faxLabel">Fax:</strong> +91-020-87654321</p>
+          <p><strong data-i18n="emailLabel">Email:</strong> office@demogp.in</p>
+          <p><strong data-i18n="dirLabel">Get Directions:</strong> <a href="https://www.google.com/maps" target="_blank" rel="noopener">Open in Google Maps</a></p>
+        </div>
+        <div class="contact-card">
+          <p><strong data-i18n="ImpLinkLabel">Important Links:</strong> </p>
+          <!-- <p><strong data-i18n="GovtResolLabel"><a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions">Government Resolutions</a></strong></p>
+          <p><strong data-i18n="NskZpLabel"><a href="https://zpnashik.maharashtra.gov.in/">Nashik Zilha Parishad</a></strong></p>
+          <p><strong data-i18n="GovtMhLabel"><a href="https://maharashtra.gov.in/">Government of Maharashtra</a></strong></p>
+          <p><strong data-i18n="MhOnlnLabel"><a href="https://www.mahaonline.gov.in/">MahaOnline</a></strong></p>
+          <p><strong data-i18n="RTILabel"><a href="https://nashik.gov.in/en/services/rti/">Right To Information</a></strong></p> -->
+           <p><a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" data-i18n="GovtResolLabel">Government Resolutions</a></p>
+          <p><a href="https://zpnashik.maharashtra.gov.in/" data-i18n="NskZpLabel">Nashik Zilha Parishad</a></p>
+          <p><a href="https://maharashtra.gov.in/" data-i18n="GovtMhLabel">Government of Maharashtra</a></p>
+          <p><a href="https://www.mahaonline.gov.in/" data-i18n="MhOnlnLabel">MahaOnline</a></p>
+          <p><a href="https://nashik.gov.in/en/services/rti/" data-i18n="RTILabel">Right To Information</a></p>
+          <div class="socialicons">
+            <p><data-i18n="emailLabel"><a href="https://www.facebook.com/"><i class='bx bxl-facebook'></i></a></p>
+            <p><data-i18n="dirLabel"><a href="https://www.instagram.com/"><i class='bx bxl-instagram'></i></a></p>
+            <p><data-i18n="emailLabel"><a href="https://web.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a></p>
+            <p><data-i18n="emailLabel"><a href="https://www.youtube.com/"><i class='bx bxl-youtube'></i></a> </p> 
+          </div>
+        </div>
+      </div>
+        <div class="contact-card">
+          <!-- Responsive Google Maps embed: replace src with your place's embed link if available -->
+          <iframe title="Panchayat location" src="https://www.google.com/maps?q=maharashtra&output=embed" style="width:100%;height:260px;border:0;border-radius:8px;" loading="lazy"></iframe>
+        </div>        
+   
+
+    </section>
+
+    <div id="logos"> 
+        <div class="govtlogos">
+          <img class="govlogo" src="Images/apleSarkar.png" alt="Aple Sarkar">        
+          <img class="govlogo" src="images/atalBujal.png" alt="Atal Bhujal">
+          <img class="govlogo" src="Images/digitalIndia.png" alt="Digital India">
+          <img class="govlogo" src="Images/g20.png" alt="G 20">
+          <img class="govlogo" src="Images/gramVikas.png" alt="Gram Vikas">
+          <img class="govlogo" src="Images/mahaShasan.png" alt="Maha shasan">
+          <img class="govlogo" src="Images/panchayatRaj.png" alt="Panchayat Raj">
+          <img class="govlogo" src="Images/vasundhara.png" alt="Vasundhara">        
+          <img class="govlogo" src="Images/panchayat.png" alt="Panchayat">
+          <img class="govlogo" src="Images/satyamevaJayate.png" alt="Satyameva Jayate">
+          <img class="govlogo" src="Images/jalayuktaShivar.png" alt="Jalyukta Shivar">
+        </div>
+      </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By RoHa | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+
+
+    <script src="script.js"></script>
+    <script src="lightbox-plus-jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
