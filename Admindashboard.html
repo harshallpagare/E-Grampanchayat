@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gram Panchayat - Official</title>
+  <meta name="description" content="Responsive Gram Panchayat website (English + Marathi) - ready to deploy" />
+  <!--Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!--Stylesheet -->
+  <link href="style.css" rel="stylesheet"> 
+  <link href="lightbox.css" rel="stylesheet">
+  <style>
+    .gallery-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.03);
+  }
+
+  .card-body {
+    background-color: #000;  /* dark background for captions */
+  }
+
+  .card-text {
+    color: #fff;
+  }
+
+
+  </style>
+</head>
+<body data-lang="en">
+
+
+
+
+<header>
+  <!-- 🌐 Language Topbar -->
+  <div class="topbar">
+    <div class="wrap topbar-content">
+      <div id="google_translate_element"></div>
+    </div>
+  </div>
+
+  <!-- 📦 Main Header -->
+  <div class="wrap nav">
+    <!-- Left Side: Logo + Title -->
+    <div class="header-left">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/GramLogo.png" alt="Logo"style="width: 50px; height: 45px; margin-top: 8px;">
+        </div>
+        <div class="headlineTitle">
+          <div class="muted" data-i18n="subTitle">Demo Gram Panchayat</div>
+          <strong data-i18n="villageName">Panchayat Name</strong>
+        </div>
+      </div>
+    </div>
+
+  <!-- 🌐 Nav Links -->
+  <nav>
+   <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
+    <ul id="navLinks">
+      <li><a href="index.html" data-i18n="navHome">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-trigger" data-i18n="navSchemes">
+          Schemes <i class="fa-solid fa-chevron-down ms-1"></i>
+        </a>
+        <div class="dropdown-menu" role="menu" aria-label="Schemes">
+          <a href="https://water.maharashtra.gov.in/" data-i18n="scWSPtitle">Water Supply Project</a>
+          <a href="https://www.zppsgp.in/maharashtra-rural-road-scheme-2025/" target="_blank" data-i18n="scVRMtitle">Village Road Improvement</a>
+          <a href="https://pmawasgraminlist.com/" target="_blank" data-i18n="scPMAtitle">PradhanMantri Awas</a>
+          <a href="https://jaljeevanmission.gov.in/" target="_blank" data-i18n="scJJMtitle">Jal-Jivan Mission</a>
+          <a href="https://swachhbharatmission.ddws.gov.in/" target="_blank" data-i18n="scSDtitle">Sanitation Drive</a>
+        </div>
+      </li>
+      <li><a href="administration.html" data-i18n="navAdmin">Administration</a></li>
+      <li><a href="gallery.html" data-i18n="navGallery">Gallery</a></li>
+      <li><a href="about.html" data-i18n="navAbout">About</a></li>
+      <li><a href="#" data-i18n="navComplaint" data-bs-toggle="modal" data-bs-target="#complaintModal">Complaint</a></li>
+      <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+    </ul>
+  </nav>  
+
+    <!-- Right Side: Controls + Hamburger -->
+    <div class="header-right">
+      <div class="header-controls">
+        <!-- Language toggle now in topbar -->
+        <div class="lang-toggle" id="adminlogin" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
+          Admin Login
+        </div>
+        <!-- 👇 Mobile-only login icon -->
+        <div id="adminlogin-icon" title="Admin Login" data-bs-toggle="modal" data-bs-target="#loginModal">
+          <i class="fa-solid fa-user-lock"></i>
+        </div>
+        <button class="lang-toggle" id="logoutBtn">Logout</button>
+        <!-- 🍔 Hamburger Menu -->
+        <!-- <div class="hamburger" aria-expanded ="false" tabindex="0" id="hamburgerBtn">&#9776;</div> -->
+      </div>
+    </div>
+  </div>
+
+</header>
+
+
+
+  <main class="wrap">
+
+    <div id="adminDashboard">
+        <section>
+            <h2 class="section-title">Admin Dashboard</h2>
+          <div class="headBtn">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal" id="btnUpload">Upload Image</button>
+              <!-- Button to open Delete-Image modal -->
+            <button id="btnOpenDeleteModal" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteGalleryModal" >Delete Image</button>
+            </div>
+
+
+            <div id="complaintTableSection">
+                <h3 class="text-center" style="margin-top: 30px;">Submitted Complaints</h3>
+                <div class="mobile-scroll">
+                  <table class="table table-striped"  border="2" id="complaintsTable">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Action</th>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Number</th>
+                            <th>Reason</th>
+                            <th>Description</th>
+                            <th>Created Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Complaints will be populated here -->
+                        </tbody>
+                    </table>  
+                </div>   
+             </div>    
+
+        </section>
+    </div>
+
+
+
+
+  <div id="logos"> 
+        <div class="govtlogos">
+          <img class="govlogo" src="Images/apleSarkar.png" alt="Aple Sarkar">        
+          <img class="govlogo" src="images/atalBujal.png" alt="Atal Bhujal">
+          <img class="govlogo" src="Images/digitalIndia.png" alt="Digital India">
+          <img class="govlogo" src="Images/g20.png" alt="G 20">
+          <img class="govlogo" src="Images/gramVikas.png" alt="Gram Vikas">
+          <img class="govlogo" src="Images/mahaShasan.png" alt="Maha shasan">
+          <img class="govlogo" src="Images/panchayatRaj.png" alt="Panchayat Raj">
+          <img class="govlogo" src="Images/vasundhara.png" alt="Vasundhara">        
+          <img class="govlogo" src="Images/panchayat.png" alt="Panchayat">
+          <img class="govlogo" src="Images/satyamevaJayate.png" alt="Satyameva Jayate">
+          <img class="govlogo" src="Images/jalayuktaShivar.png" alt="Jalyukta Shivar">
+        </div>
+      </div>
+
+
+
+
+      
+      <div class="modal" id="loginModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form id = "adminLoginForm">
+                <div class="mb-3">
+                  <lable class="form-label required" >Username :</lable>
+                  <input type="text" id="username" class="form-control" placeholder="User Name" required>
+                  
+                </div>
+                <div class="mb-3">
+                  <lable class="form-label required">Password :</lable>
+                  <input type="password" id="password" class="form-control" placeholder="Password" required>
+                </div>
+                
+            <div class="modal-footer justify-content-center">
+                <button class="btn btn-primary" type="submit" id="loginbtn">Login</button>    
+            </div>
+              </form>
+            </div>
+             <div class="text-center mb-4">
+                  <a href="#"> didn't have an account?</a>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="modal" id="uploadModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 data-i18n="imgLabel" class="modal-title">Image Upload</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form id="uploadForm">
+                <div class="mb-3">
+                  <lable data-i18n="imgTitleLabel" class="form-label required" >Title :</lable>
+                  <input type="text" data-i18n="nametextLabel" id="imageTitle" class="form-control" placeholder="Enter Title of the Image" required>
+                  <span class="imageFileError"></span> 
+                </div>
+                <div class="mb-3">
+                  <lable data-i18n="imgCaptionLabel" class="form-label required" >Caption :</lable>
+                  <input type="text" data-i18n="nametextLabel" id="imageCaption" class="form-control" placeholder="Enter Caption of the Image" required>
+                  <span class="imageFileError" ></span> 
+                </div>
+                <div class="mb-3">
+                  <lable  class="form-label required" for="uploadImage" data-i18n="imgUploadLabel">Upload Image :</lable>
+                  <div class="custom-file">
+                    <!-- <input class="custom-file-input" id="imageFile"  type="file" /> -->
+                    <input class="form-control form-control-sm" id="imageFile" type="file" required />    
+                    <span class="imageFileError" style="text-decoration:red;"></span>                
+                  </div>
+                </div>
+             
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-i18n="submitLabel" type="submit" >Submit</button>
+                <button class="btn btn-danger" data-bs-dismiss="modal" type="submit">Close</button>
+            </div>
+             </form>
+          </div>
+        </div>
+      </div>
+
+            
+      
+
+  <!-- Modal: To list images and allow selection for deletion -->
+   <div class="modal fade" id="deleteGalleryModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Select Image to Delete</h5>
+        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="galleryLoading">Loading...</div>
+        <div id="galleryListContainer" class="container-fluid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal: lightbox / image + delete confirmation -->
+  <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Confirm Delete</h5>
+          <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="deletePreview" src="" class="img-fluid mb-2" />
+          <p id="deleteCaption"></p>
+          <button id="confirmDeleteBtn" class="btn btn-danger mt-3">Delete</button>
+          <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+
+
+
+  
+   <script src="config.js"></script>
+<!-- <script src="script.js"></script> -->
+    <script src="lightbox-plus-jquery.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+
+    var loginbtn = document.getElementById('adminlogin');
+      loginbtn.style.display='none';
+
+      // Run on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      const token = localStorage.getItem("token");     
+
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.removeItem("token");
+  
+        window.location.href = "index.html"; // Redirect to home
+      });
+    });
+
+
+
+/********************************************
+ *  🌐 GOOGLE TRANSLATE INITIALIZATION
+ ********************************************/
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en', // Default language
+      includedLanguages: 'en,mr,hi', // English, Marathi, Hindi
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+
+/********************************************
+ *  🗣️ LANGUAGE TRANSLATION UTILITIES
+ ********************************************/
+function translateLanguage(lang) {
+  const select = document.querySelector("select.goog-te-combo");
+  if (select) {
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+  }
+}
+
+function storeLanguage(lang) {
+  localStorage.setItem("preferredLanguage", lang);
+}
+
+function getStoredLanguage() {
+  return localStorage.getItem("preferredLanguage");
+}
+
+/********************************************
+ *  🕒 PAGE LOAD INITIALIZATION
+ ********************************************/
+document.addEventListener("DOMContentLoaded", function () {
+  
+ // 🌍 Language handling
+  const userLang = getStoredLanguage();
+ 
+  const langToSet = userLang || 'mr';
+  const interval = setInterval(() => {
+    const select = document.querySelector("select.goog-te-combo");
+    if (select) {
+      translateLanguage(langToSet);
+      clearInterval(interval);
+    }
+  }, 500);
+
+  document.addEventListener("change", function (e) {
+    if (e.target.classList.contains("goog-te-combo")) {
+      storeLanguage(e.target.value);
+    }
+  });
+
+
+
+});
+
+/********************************************
+ *  🔒 FETCH PROTECTED ADMIN DATA
+ ********************************************/
+
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+  fetch(apiPath + 'admin/dashboard',{
+  headers: {
+    "Authorization": `Bearer ${localStorage.getItem("adminToken")}`
+  }
+})
+  .then(res => {
+    if (res.status === 401) {
+      const token = localStorage.getItem("adminToken");
+      
+      window.location.href = "adminDashboard.html";
+    }
+    return res.json();
+  })
+  .then(data => {
+    console.log("Secure data:", data);
+  });
+
+/********************************************
+ *  🧭 ADMIN DASHBOARD HANDLER
+ ********************************************/
+function showAdminDashboard() {
+  document.getElementById("adminDashboard").style.display = "block";
+  loadComplaints();
+}
+
+
+/********************************************
+ *  🖼️ IMAGE UPLOAD FUNCTIONALITY
+ ********************************************/
+document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const allowedExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.heic', '.heif', '.proraw'];
+  const maxFileSizeMB = 5;
+
+  const title = document.getElementById('imageTitle').value;
+  const caption = document.getElementById('imageCaption').value;
+  const fileInput = document.getElementById('imageFile');
+  const errorSpan = fileInput.nextElementSibling;
+  const file = fileInput.files[0];
+  let errorMessage = '';
+
+  // 🔍 Validation
+  if (!file) {
+    errorMessage = 'Please select a file.';
+  } else {
+    const fileName = file.name;
+    const fileSizeMB = file.size / (1024 * 1024);
+    const fileExtension = '.' + fileName.split('.').pop().toLowerCase();
+
+    if (!allowedExtensions.includes(fileExtension)) {
+      errorMessage = `*Allowed: ${allowedExtensions.join(', ')}`;
+    } else if (fileSizeMB > maxFileSizeMB) {
+      errorMessage = `File size should be less than ${maxFileSizeMB}MB.`;
+    }
+  }
+
+  if (errorMessage) {
+    errorSpan.textContent = errorMessage;
+    return;
+  } else {
+    errorSpan.textContent = '';
+  }
+
+  // 📤 Upload request
+  const formData = new FormData();
+  formData.append('File', file);
+  formData.append('title', title);
+  formData.append('caption', caption);
+
+  const token = localStorage.getItem('adminToken');
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+    const resp = await fetch(apiPath + 'galleryImage/Upload',{
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer ' + token },
+    body: formData
+  });
+
+  if (!resp.ok) {
+    alert('Upload failed!');
+    return;
+  }
+
+  await resp.json();
+  alert('Image Uploaded Successfully!');
+  document.getElementById('uploadForm').reset();
+  loadGallery();
+});
+
+
+
+//Fetching Images from api 
+
+
+async function loadGallery() {
+  try {
+    // Replace with your correct API URL
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+    const resp = await fetch(apiPath + 'galleryImage');
+    // const resp = await fetch('https://localhost:7235/api/galleryImage');
+    if (!resp.ok) {
+      console.error('Gallery fetch failed', resp.status, await resp.text());
+      return;
+    }
+    const images = await resp.json();
+    renderGallery(images);
+  } catch (err) {
+    console.error('Error fetching gallery', err);
+  }
+}
+
+
+function renderGallery(images) {
+  const galleryGrid = document.getElementById('galleryGrid');
+  if (!galleryGrid) {
+    console.error('No #galleryGrid element found');
+    return;
+  }
+
+  // Clear existing content
+  galleryGrid.innerHTML = '';
+
+  images.forEach(img => {
+    // img.filepath is something like "/gallery/unique-filename.jpg"
+    // Compose full URL if needed (for example, if your API is on another domain)
+    const src = img.filepath;  
+    const caption = img.caption || '';
+    const title = img.title || '';
+
+    // Create anchor element for lightbox
+    const a = document.createElement('a');
+    a.href = src;
+    a.setAttribute('data-lightbox', 'models');
+    a.setAttribute('data-title', caption);
+
+    // Create image element
+    const imageEl = document.createElement('img');
+    imageEl.classList.add('gimg');
+    imageEl.src = src;
+    imageEl.alt = title;
+
+    // Append
+    a.appendChild(imageEl);
+    galleryGrid.appendChild(a);
+  });
+}
+
+
+
+
+
+
+
+
+/********************************************
+ *  🗑️ This is the NavBar Toggle Elemn for Mobile View
+ ********************************************/
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const menu = document.querySelector('nav ul#navLinks');
+  const menuLinks = document.querySelectorAll('nav ul#navLinks li a');
+
+  // Guard: if elements are missing (e.g. different page), exit gracefully
+  if (!toggle || !menu) return;
+
+  // Toggle menu on hamburger click
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('show');       // add/remove .show
+    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+    // Optional: change icon from ☰ to ✖
+    toggle.textContent = isOpen ? '✖' : '☰';
+  });
+
+  // Close menu when any link clicked (for SPA behaviour or anchor links)
+  if (menuLinks.length) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+  }
+
+
+
+  // Optional: close menu if user taps/clicks outside the nav when open
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('show')) return;
+    if (!e.target.closest('nav')&& !e.target.closest('.mobile-nav-toggle')) {
+      menu.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+
+  // Optional: allow keyboard toggle via Enter/Space when focused
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle.click();
+    }
+  });
+});
+
+
+
+
+
+
+
+
+/********************************************
+ *  🗑️ DELETE IMAGE FROM GALLERY
+ ********************************************/
+document.getElementById("btnOpenDeleteModal").addEventListener("click", function () {
+  $("#deleteGalleryModal").modal("show");
+  loadGalleryImages();
+});
+
+function loadGalleryImages() {
+  const container = document.getElementById("galleryListContainer");
+  const loader = document.getElementById("galleryLoading");
+
+  container.innerHTML = "";
+  loader.style.display = "block";
+
+  // fetch('https://localhost:7235/api/galleryImage')
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+  const apiImgPath = window.APP_CONFIG.apiImgUrl;
+    fetch(apiPath + 'galleryImage')
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load images");
+      return res.json();
+    })
+    .then(data => {
+      loader.style.display = "none";
+      data.sort((a, b) => b.id - a.id);
+
+      let row;
+      data.forEach((img, index) => {
+        const fullUrl = apiImgPath + img.filepath;
+        const caption = img.caption || '';
+        const title = img.title || '';
+
+        if (index % 4 === 0) {
+          row = document.createElement("div");
+          row.className = "row mb-4";
+          container.appendChild(row);
+        }
+
+        const col = document.createElement("div");
+        col.className = "col-md-3 col-sm-6 mb-3 text-center";
+        col.innerHTML = `
+          <div class="card h-100 gallery-item" onclick="onSelectGalleryItem(${img.id}, '${fullUrl}', \`${caption}\`)">
+            <img src="${fullUrl}" class="card-img-top img-fluid" alt="${title}" />
+            <div class="card-body p-2 bg-dark text-white">
+              <small class="card-text">${caption}</small>
+            </div>
+          </div>
+        `;
+        row.appendChild(col);
+      });
+    })
+    .catch(err => {
+      loader.style.display = "none";
+      console.error("Error loading gallery images:", err);
+      container.innerHTML = "<p>Error loading images.</p>";
+    });
+}
+
+let selectedImageId = null;
+
+function onSelectGalleryItem(id, imgUrl, caption) {
+  selectedImageId = id;
+  document.getElementById('deletePreview').src = imgUrl;
+  document.getElementById('deleteCaption').textContent = caption || "No caption available";
+  $('#confirmDeleteModal').modal('show');
+}
+
+document.getElementById('confirmDeleteBtn').addEventListener('click', () => {
+  if (!selectedImageId) return;
+
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+   fetch(apiPath + `galleryImage/${selectedImageId}`,{
+    method: 'DELETE'
+  })
+    .then(res => {
+      if (!res.ok) throw new Error('Delete failed');
+      return res.json();
+    })
+    .then(() => {
+      alert("Image deleted successfully");
+      $('#confirmDeleteModal').modal('hide');
+      loadGalleryImages();
+    })
+    .catch(err => {
+      console.error('Delete error:', err);
+      alert('Failed to delete image.');
+    });
+});
+
+/********************************************
+ *  📋 COMPLAINTS TABLE HANDLING
+ ********************************************/
+window.onload = function () {
+  loadComplaints();
+};
+
+async function loadComplaints() {
+  const tbody = document.querySelector('#complaintsTable tbody');
+
+  try {
+    const token = localStorage.getItem('adminToken');
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+   const resp = await fetch(apiPath + 'Complaint',{
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+    const arr = await resp.json();
+
+    tbody.innerHTML = '';
+    arr.forEach(c => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td></td>
+        <td>${c.id}</td>
+        <td>${c.name}</td>
+        <td>${c.number}</td>
+        <td>${c.reason}</td>
+        <td>${c.description}</td>
+        <td>${formatDateTime(c.createdDate)}</td>
+      `;
+
+      const actionCell = tr.firstElementChild;
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.className = 'btn btn-sm btn-danger';
+      deleteBtn.style.marginLeft = '8px';
+
+      deleteBtn.addEventListener('click', () => {
+        if (confirm(`Are you sure you want to delete Complaint ID ${c.id}?`)) {
+        const apiPath = window.APP_CONFIG.apiBaseUrl;
+          fetch(apiPath + `complaint/${c.id}`,{
+            method: 'DELETE',
+            headers: { 'Authorization': 'Bearer ' + token }
+          })
+            .then(res => {
+              if (!res.ok) throw new Error('Delete failed');
+              alert("Complaint deleted successfully");
+              loadComplaints();
+            })
+            .catch(err => {
+              console.error('Delete error:', err);
+              alert('Failed to delete complaint.');
+            });
+        }
+      });
+
+      actionCell.appendChild(deleteBtn);
+      tbody.appendChild(tr);
+    });
+  } catch (err) {
+    tbody.innerHTML = `<tr><td colspan="7">Failed to load complaints.</td></tr>`;
+  }
+}
+
+function formatDateTime(dateStr) {
+  const date = new Date(dateStr);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  let hours = date.getHours();
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12;
+  return `${day}/${month}/${year} ${hours}:${minutes} ${ampm}`;
+}
+
+
+  </script>
+
+</body>
+</html>

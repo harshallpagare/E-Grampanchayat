@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     
     <!-- Google Font -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;  &display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!--Stylesheet -->
   <link href="style.css" rel="stylesheet"> 
   <link href="lightbox.css" rel="stylesheet">
-  
 </head>
 <body data-lang="en">
+ 
 
 
 <header>
@@ -81,8 +80,6 @@
         <div id="adminlogin-icon" title="Admin Login" data-bs-toggle="modal" data-bs-target="#loginModal">
           <i class="fa-solid fa-user-lock"></i>
         </div>
-        
-        <button class="lang-toggle" id="logoutBtn">Logout</button>
         <!-- 🍔 Hamburger Menu -->
         <!-- <div class="hamburger" aria-expanded ="false" tabindex="0" id="hamburgerBtn">&#9776;</div> -->
       </div>
@@ -94,34 +91,70 @@
 
 
   <main class="wrap">
-    <!-- HERO / SLIDER -->
-    <section id="home" class="hero" aria-label="Hero banner">
-      <div class="slides" id="slides">
-        <div class="slide" style="background-image:url('Images/bannerImage_1.png')">
-          <div class="caption"><h1 data-i18n="hero1">Welcome to Our Gram Panchayat</h1><p class="muted" data-i18n="hero1sub">Serving the village with transparency and care</p></div>
-        </div>
-        <div class="slide" style="background-image:url('Images/bannerImage_2.jpg')">
-          <div class="caption"><h1 data-i18n="hero2">Local Development & Welfare</h1><p class="muted" data-i18n="hero2sub">Projects and schemes for every household</p></div>
-        </div>
-          <div class="slide" style="background-image:url('Images/bannerImage_3.jpeg')">
-          <div class="caption"><h1 data-i18n="hero3">Community Events & Gallery</h1><p class="muted" data-i18n="hero3sub">Memories and celebrations of our village</p></div>
-        </div>
-           <div class="slide" style="background-image:url('Images/bannerImage.png')">
-          <div class="caption"><h1 data-i18n="hero4">Contact & Reachability</h1><p class="muted" data-i18n="hero4sub">Office hours and how to reach us</p></div>
+
+
+       <!-- SCHEMES -->
+    <section id="schemes">
+      <div class="section-title"><h2 data-i18n="schemesTitle">Government Schemes</h2><div class="muted" data-i18n="schemesSubtitle">(Completed, Ongoing & Future)</div></div>
+
+      <div id="schemes-completed">
+        <!-- <h3 data-i18n="schemesCompleted">Completed Schemes</h3> -->
+        <div class="cards" id="completedCards">
+          <!-- Sample cards - replace images/text as needed -->
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/jal-jivan_mission" alt="Scheme image">
+            <h3 data-i18n="sc1title">Water Supply Project</h3>
+            <p data-i18n="sc1desc">A completed project that securely provides drinking water to all households.</p>
+          </article>
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/pmgsy-e89d506d.jpg" alt="Scheme image">
+            <h3 data-i18n="sc2title">Village Road Improvement</h3>
+            <p data-i18n="sc2desc">Improved connectivity with permanent pavements and drainage.</p>
+          </article>
         </div>
       </div>
-      <div class="overlay"></div>
-      <div class="dots" id="dots" aria-hidden="false"></div>
+
+      <div id="schemes-ongoing" style="margin-top:22px">
+        <!-- <h3 data-i18n="schemesOngoing">Ongoing Schemes</h3> -->
+        <div class="cards" id="ongoingCards">
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1542223616-8c1f6b7b3b4b?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/sanitationDrive" alt="Scheme image">
+            <h3 data-i18n="sc3title">Sanitation Drive</h3>
+            <p data-i18n="sc3desc">Promoting cleanliness and building household toilets.</p>
+          </article>
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1542293787938-c9e299b88095?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/CropYojana.png" alt="Scheme image">
+            <h3 data-i18n="sc4title">Crop Support Program</h3>
+            <p data-i18n="sc4desc">Support for farmers with inputs and training.</p>
+          </article>
+        </div>
+      </div>
+
+      <div id="schemes-future" style="margin-top:22px">
+        <!-- <h3 data-i18n="schemesFuture">Future Schemes</h3> -->
+        <div class="cards" id="futureCards">
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/jal-jivan_mission" alt="Scheme image">
+            <h3 data-i18n="sc5title">Jal-Jivan Mission</h3>
+            <p data-i18n="sc5desc">Plan for a multi-purpose hall for events and training.</p>
+          </article>
+          <article class="card">
+            <!-- <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=60" alt="Scheme image"> -->
+            <img src="Images/solarstreet.jpg" alt="Scheme image">
+            <h3 data-i18n="sc6title">Solar Street Lighting</h3>
+            <p data-i18n="sc6desc">Proposal to install energy-efficient solar lights.</p>
+          </article>
+        </div>
+      </div>
     </section>
+    
 
-   
-
-
-
-    <!-- The Other Sections Were here  -->
-
-
-
+    
     <div id="logos"> 
         <div class="govtlogos">
           <img class="govlogo" src="Images/apleSarkar.png" alt="Aple Sarkar">        
@@ -138,8 +171,7 @@
         </div>
       </div>
 
-     
-
+      
       
 <div class="modal" id="complaintModal">
         <div class="modal-dialog">
@@ -178,7 +210,6 @@
           </div>
         </div>
       </div>
-    
 
 
       <div class="modal" id="loginModal">
@@ -212,7 +243,7 @@
         </div>
       </div>
 
-  </main>
+     </main>
 
   <!-- FOOTER -->
   <footer>
@@ -227,13 +258,67 @@
 
 
 
-  
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+   <script src="config.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <script src="script.js"></script> -->
     <script src="lightbox-plus-jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript">
+    <script>
+
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en', // Your default language
+      includedLanguages: 'en,hi,mr', // Languages you want to include (English, Hindi, Marathi)
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  // Helper to trigger translation
+  function translateLanguage(lang) {
+    const select = document.querySelector("select.goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+
+  // Store selected language
+  function storeLanguage(lang) {
+    localStorage.setItem("preferredLanguage", lang);
+  }
+
+  // Read stored language
+  function getStoredLanguage() {
+    return localStorage.getItem("preferredLanguage");
+  }
+
+  // On page load
+  document.addEventListener("DOMContentLoaded", function () {
+    const userLang = getStoredLanguage();
+
+    // Default to Marathi if no choice yet
+    const langToSet = userLang ? userLang : 'mr';
+
+    // Delay needed because Google Translate widget loads asynchronously
+    const interval = setInterval(() => {
+      const select = document.querySelector("select.goog-te-combo");
+      if (select) {
+        translateLanguage(langToSet);
+        clearInterval(interval);
+      }
+    }, 500);
+
+    // Event listener to track manual selection and store it
+    document.addEventListener("change", function (e) {
+      if (e.target.classList.contains("goog-te-combo")) {
+        storeLanguage(e.target.value);
+      }
+    });
+  });
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.mobile-nav-toggle');
   const menu = document.querySelector('nav ul#navLinks');
@@ -282,77 +367,88 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+      
+    //Complaint Reason Dropdown
+    
+    const reason = [
+      {id : 1, name : 'Water Problem'},
+      {id : 2, name : 'Sanitation'},
+      {id : 3, name : 'Chamber'},
+      {id : 4, name : 'Road Transport'},
+      {id : 5, name : 'Street Light'},
+      {id : 6, name : 'Solid Waste'},
+      {id : 7, name : 'Other'},
+    ]
+
+    const reasonDrpDown = document.getElementById('reasonDropdown');
+
+    reason.forEach(rsn => {
+      const option = document.createElement('option');
+      option.value = rsn.id;
+      option.textContent = rsn.name;
+      reasonDrpDown.appendChild(option);
+    })
 
 
+    //---------------Complaint Reason Dropdown---------------
 
 
-
-
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'mr', // Your default language
-      includedLanguages: 'en,mr,hi', // Languages you want to include (English, Hindi, Marathi)
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-
-  // Google Language translator
-  
-  // Helper to trigger translation
-  function translateLanguage(lang) {
-    const select = document.querySelector("select.goog-te-combo");
-    if (select) {
-      select.value = lang;
-      select.dispatchEvent(new Event("change"));
-    }
-  }
-
-  // Store selected language
-  function storeLanguage(lang) {
-    localStorage.setItem("preferredLanguage", lang);
-  }
-
-  // Read stored language
-  function getStoredLanguage() {
-    return localStorage.getItem("preferredLanguage");
-  }
-
-  // On page load
-  document.addEventListener("DOMContentLoaded", function () {
-    const userLang = getStoredLanguage();
-
-    // Default to Marathi if no choice yet
-    const langToSet = userLang ? userLang : 'mr';
-
-    // Delay needed because Google Translate widget loads asynchronously
-    const interval = setInterval(() => {
-      const select = document.querySelector("select.goog-te-combo");
-      if (select) {
-        translateLanguage(langToSet);
-        clearInterval(interval);
-      }
-    }, 500);
-
-    // Event listener to track manual selection and store it
-    document.addEventListener("change", function (e) {
-      if (e.target.classList.contains("goog-te-combo")) {
-        storeLanguage(e.target.value);
-      }
-    });
+    
+//Admin Login Implementation
+  document.getElementById('adminLoginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+    const resp = await fetch(apiPath + 'admin/login',{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
   });
+  if (!resp.ok) {
+      message.style.color = "red";
+      message.textContent = "Invalid credentials, Login Failed!";
+    return;
+  }
+  const data = await resp.json();
+  // Suppose API returns a JWT token or session token
+  localStorage.setItem('token', data.token);
+  // redirect or load admin dashboard:
+  window.location.href = '/Admindashboard.html';
+});
 
+
+
+// sending Comlaint to api
+
+document.getElementById('complaintForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const name = document.getElementById('complainterName').value;
+  const number = document.getElementById('complainterNumber').value;
+  const rsn = document.getElementById('reasonDropdown').value;
+  const msg = document.getElementById('comlaintDesc').value;
   
+  const selectedReason = reason.find(r => r.id === parseInt(rsn))?.name;
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+    const resp = await fetch(apiPath + 'complaint/submit',{
 
-// document.getElementById('hamburgerBtn').addEventListener('click', function () {
-//   const navLinks = document.getElementById('navLinks');
-//   if (navLinks) {
-//     navLinks.classList.toggle('show');
-//   }
-// });
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ Name: name, Number : number, Reason : selectedReason, Description: msg })
+  });
+  if (resp.ok) {
+    alert('Complaint sent Successfully!');
+    document.getElementById('complaintForm').reset();
+    // optionally close modal
+  } else {
+    alert('Complaint - Operation Failed!');
+  }
+});
 
 
 
-</script>
-
+    </script>
 </body>
 </html>

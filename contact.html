@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gram Panchayat - Official</title>
+  <meta name="description" content="Responsive Gram Panchayat website (English + Marathi) - ready to deploy" />
+  <!--Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!--Stylesheet -->
+  <link href="style.css" rel="stylesheet"> 
+  <link href="lightbox.css" rel="stylesheet">
+</head>
+<body data-lang="en">
+ 
+       
+    <header>
+      <!-- 🌐 Language Topbar -->
+      <div class="topbar">
+        <div class="wrap topbar-content">
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+
+      <!-- 📦 Main Header -->
+      <div class="wrap nav">
+        <!-- Left Side: Logo + Title -->
+        <div class="header-left">
+          <div class="brand">
+            <div class="logo">
+              <img src="Images/GramLogo.png" alt="Logo"style="width: 50px; height: 45px; margin-top: 8px;">
+            </div>
+            <div class="headlineTitle">
+              <div class="muted" data-i18n="subTitle">Demo Gram Panchayat</div>
+              <strong data-i18n="villageName">Panchayat Name</strong>
+            </div>
+          </div>
+        </div>
+
+      <!-- 🌐 Nav Links -->
+      <nav>
+      <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
+        <ul id="navLinks">
+          <li><a href="index.html" data-i18n="navHome">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-trigger" data-i18n="navSchemes">
+              Schemes <i class="fa-solid fa-chevron-down ms-1"></i>
+            </a>
+            <div class="dropdown-menu" role="menu" aria-label="Schemes">
+              <a href="https://water.maharashtra.gov.in/" data-i18n="scWSPtitle">Water Supply Project</a>
+              <a href="https://www.zppsgp.in/maharashtra-rural-road-scheme-2025/" target="_blank" data-i18n="scVRMtitle">Village Road Improvement</a>
+              <a href="https://pmawasgraminlist.com/" target="_blank" data-i18n="scPMAtitle">PradhanMantri Awas</a>
+              <a href="https://jaljeevanmission.gov.in/" target="_blank" data-i18n="scJJMtitle">Jal-Jivan Mission</a>
+              <a href="https://swachhbharatmission.ddws.gov.in/" target="_blank" data-i18n="scSDtitle">Sanitation Drive</a>
+            </div>
+          </li>
+          <li><a href="administration.html" data-i18n="navAdmin">Administration</a></li>
+          <li><a href="gallery.html" data-i18n="navGallery">Gallery</a></li>
+          <li><a href="about.html" data-i18n="navAbout">About</a></li>
+          <li><a href="#" data-i18n="navComplaint" data-bs-toggle="modal" data-bs-target="#complaintModal">Complaint</a></li>
+          <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+        </ul>
+      </nav>  
+
+        <!-- Right Side: Controls + Hamburger -->
+        <div class="header-right">
+          <div class="header-controls">
+            <!-- Language toggle now in topbar -->
+            <div class="lang-toggle" id="adminlogin" data-bs-toggle="modal" data-bs-target="#loginModal" title="Admin Login">
+              Admin Login
+            </div>
+            <!-- 👇 Mobile-only login icon -->
+            <div id="adminlogin-icon" title="Admin Login" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="fa-solid fa-user-lock"></i>
+            </div>
+            <!-- 🍔 Hamburger Menu -->
+            <!-- <div class="hamburger" aria-expanded ="false" tabindex="0" id="hamburgerBtn">&#9776;</div> -->
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+
+  <main class="wrap">
+
+
+            <section id="contact">
+                <div class="section-title"><h2 data-i18n="contactTitle">Contact Us</h2><div class="muted" data-i18n="contactSub">Address, phone and map</div></div>
+                <div class="two-col">
+                    <div class="contact-card">
+                    <p><strong data-i18n="addressLabel">Address:</strong> Gram Panchayat Office, Demo Village, Taluka, District, Maharashtra</p>
+                    <p><strong data-i18n="phoneLabel">Phone:</strong> +91-020-12345678</p>
+                    <p><strong data-i18n="faxLabel">Fax:</strong> +91-020-87654321</p>
+                    <p><strong data-i18n="emailLabel">Email:</strong> office@demogp.in</p>
+                    <p><strong data-i18n="dirLabel">Get Directions:</strong> <a href="https://www.google.com/maps" target="_blank" rel="noopener">Open in Google Maps</a></p>
+                    </div>
+                    <div class="contact-card">
+                    <p><strong data-i18n="ImpLinkLabel">Important Links:</strong> </p>                
+                    <p><a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" data-i18n="GovtResolLabel">Government Resolutions</a></p>
+                    <p><a href="https://zpnashik.maharashtra.gov.in/" data-i18n="NskZpLabel">Nashik Zilha Parishad</a></p>
+                    <p><a href="https://maharashtra.gov.in/" data-i18n="GovtMhLabel">Government of Maharashtra</a></p>
+                    <p><a href="https://www.mahaonline.gov.in/" data-i18n="MhOnlnLabel">MahaOnline</a></p>
+                    <p><a href="https://nashik.gov.in/en/services/rti/" data-i18n="RTILabel">Right To Information</a></p>
+                    <div class="socialicons">
+                        <p><data-i18n="emailLabel"><a href="https://www.facebook.com/"><i class='bx bxl-facebook'></i></a></p>
+                        <p><data-i18n="dirLabel"><a href="https://www.instagram.com/"><i class='bx bxl-instagram'></i></a></p>
+                        <p><data-i18n="emailLabel"><a href="https://web.whatsapp.com/"><i class='bx bxl-whatsapp'></i></a></p>
+                        <p><data-i18n="emailLabel"><a href="https://www.youtube.com/"><i class='bx bxl-youtube'></i></a> </p> 
+                    </div>
+                    </div>
+                </div>
+                    <div class="contact-card">
+                    <!-- Responsive Google Maps embed: replace src with your place's embed link if available -->
+                    <iframe title="Panchayat location" src="https://www.google.com/maps?q=maharashtra&output=embed" style="width:100%;height:260px;border:0;border-radius:8px;" loading="lazy"></iframe>
+                    </div>        
+            
+            </section>
+
+
+    <div id="logos"> 
+        <div class="govtlogos">
+          <img class="govlogo" src="Images/apleSarkar.png" alt="Aple Sarkar">        
+          <img class="govlogo" src="images/atalBujal.png" alt="Atal Bhujal">
+          <img class="govlogo" src="Images/digitalIndia.png" alt="Digital India">
+          <img class="govlogo" src="Images/g20.png" alt="G 20">
+          <img class="govlogo" src="Images/gramVikas.png" alt="Gram Vikas">
+          <img class="govlogo" src="Images/mahaShasan.png" alt="Maha shasan">
+          <img class="govlogo" src="Images/panchayatRaj.png" alt="Panchayat Raj">
+          <img class="govlogo" src="Images/vasundhara.png" alt="Vasundhara">        
+          <img class="govlogo" src="Images/panchayat.png" alt="Panchayat">
+          <img class="govlogo" src="Images/satyamevaJayate.png" alt="Satyameva Jayate">
+          <img class="govlogo" src="Images/jalayuktaShivar.png" alt="Jalyukta Shivar">
+        </div>
+      </div>
+
+
+
+      
+<div class="modal" id="complaintModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 data-i18n="complaintLabel" class="modal-title">Complaint</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form id = "complaintForm">
+                <div class="mb-3">
+                  <lable data-i18n="nameComplaintLabel" class="form-label" required>Name :</lable>
+                  <input type="text" data-i18n="nametextLabel" class="form-control" id="complainterName" placeholder="Enter Your Full Name" required>
+                </div>
+                <div class="mb-3">
+                  <lable data-i18n="selectReasonLabel" class="form-label" required>Mobile Number :</lable>
+                  <input type="number" data-i18n="numberLabel" id="complainterNumber" class="form-control" placeholder="Enter Your Number" required>
+                </div>
+                <div class="mb-3">
+                  <lable data-i18n="reasonLabel" class="form-label" required>Reason :</lable>
+               <select  class="form-control" id="reasonDropdown" required>
+                 <option data-i18n="selectReasonLabel" value="">-- Select Reason --</option>
+               </select>
+                </div>
+                <div class="mb-3">
+                  <lable data-i18n="descriptionLabel" class="form-label" required>Description :</lable>
+                  <textarea class="form-control" data-i18n="descTextLabel" id="comlaintDesc" cols="6" rows="2" placeholder="Describe the Problem" required></textarea>
+                </div>             
+            </div>
+            <div class="modal-footer">
+                <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                <button class="btn btn-primary" data-i18n="submitLabel" type="submit">Submit</button>
+                <button class="btn btn-danger" data-bs-dismiss="modal" type="submit">Close</button>
+            </div>
+             </form>
+          </div>
+        </div>
+      </div>
+       
+
+
+      <div class="modal" id="loginModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form id = "adminLoginForm">
+                <div class="mb-3">
+                  <lable class="form-label required" >Username :</lable>
+                  <input type="text" id="username" class="form-control" placeholder="User Name" required>
+                  
+                </div>
+                <div class="mb-3">
+                  <lable class="form-label required">Password :</lable>
+                  <input type="password" id="password" class="form-control" placeholder="Password" required>
+                </div>
+                
+            <div class="modal-footer justify-content-center">
+                <button class="btn btn-primary" type="submit" id="loginbtn">Login</button>    
+            </div>
+              </form>
+            </div>
+             <!-- <div class="text-center mb-4">
+                  <a href="#"> didn't have an account?</a>
+             </div> -->
+          </div>
+        </div>
+      </div>
+
+            
+
+     </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+
+
+     <script src="config.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="lightbox-plus-jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en', // Your default language
+      includedLanguages: 'en,hi,mr', // Languages you want to include (English, Hindi, Marathi)
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+
+  // Helper to trigger translation
+  function translateLanguage(lang) {
+    const select = document.querySelector("select.goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+
+  // Store selected language
+  function storeLanguage(lang) {
+    localStorage.setItem("preferredLanguage", lang);
+  }
+
+  // Read stored language
+  function getStoredLanguage() {
+    return localStorage.getItem("preferredLanguage");
+  }
+
+  // On page load
+  document.addEventListener("DOMContentLoaded", function () {
+    const userLang = getStoredLanguage();
+
+    // Default to Marathi if no choice yet
+    const langToSet = userLang ? userLang : 'mr';
+
+    // Delay needed because Google Translate widget loads asynchronously
+    const interval = setInterval(() => {
+      const select = document.querySelector("select.goog-te-combo");
+      if (select) {
+        translateLanguage(langToSet);
+        clearInterval(interval);
+      }
+    }, 500);
+
+    // Event listener to track manual selection and store it
+    document.addEventListener("change", function (e) {
+      if (e.target.classList.contains("goog-te-combo")) {
+        storeLanguage(e.target.value);
+      }
+    });
+  });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const menu = document.querySelector('nav ul#navLinks');
+  const menuLinks = document.querySelectorAll('nav ul#navLinks li a');
+
+  // Guard: if elements are missing (e.g. different page), exit gracefully
+  if (!toggle || !menu) return;
+
+  // Toggle menu on hamburger click
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('show');       // add/remove .show
+    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+    // Optional: change icon from ☰ to ✖
+    toggle.textContent = isOpen ? '✖' : '☰';
+  });
+
+  // Close menu when any link clicked (for SPA behaviour or anchor links)
+  if (menuLinks.length) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+  }
+
+
+
+  // Optional: close menu if user taps/clicks outside the nav when open
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('show')) return;
+    if (!e.target.closest('nav')&& !e.target.closest('.mobile-nav-toggle')) {
+      menu.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+
+  // Optional: allow keyboard toggle via Enter/Space when focused
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle.click();
+    }
+  });
+});
+
+
+      
+    //Complaint Reason Dropdown
+    
+    const reason = [
+      {id : 1, name : 'Water Problem'},
+      {id : 2, name : 'Sanitation'},
+      {id : 3, name : 'Chamber'},
+      {id : 4, name : 'Road Transport'},
+      {id : 5, name : 'Street Light'},
+      {id : 6, name : 'Solid Waste'},
+      {id : 7, name : 'Other'},
+    ]
+
+    const reasonDrpDown = document.getElementById('reasonDropdown');
+
+    reason.forEach(rsn => {
+      const option = document.createElement('option');
+      option.value = rsn.id;
+      option.textContent = rsn.name;
+      reasonDrpDown.appendChild(option);
+    })
+
+
+    //---------------Complaint Reason Dropdown---------------
+
+    
+//Admin Login Implementation
+  document.getElementById('adminLoginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+    const resp = await fetch(apiPath + 'admin/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  });
+  if (!resp.ok) {
+      message.style.color = "red";
+      message.textContent = "Invalid credentials, Login Failed!";
+    return;
+  }
+  const data = await resp.json();
+  // Suppose API returns a JWT token or session token
+  localStorage.setItem('token', data.token);
+  // redirect or load admin dashboard:
+  window.location.href = '/Admindashboard.html';
+});
+
+
+// sending Comlaint to api
+
+document.getElementById('complaintForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const name = document.getElementById('complainterName').value;
+  const number = document.getElementById('complainterNumber').value;
+  const rsn = document.getElementById('reasonDropdown').value;
+  const msg = document.getElementById('comlaintDesc').value;
+  
+  const selectedReason = reason.find(r => r.id === parseInt(rsn))?.name;
+  const apiPath = window.APP_CONFIG.apiBaseUrl;
+    const resp = await fetch(apiPath + 'complaint/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ Name: name, Number : number, Reason : selectedReason, Description: msg })
+  });
+  if (resp.ok) {
+    alert('Complaint sent Successfully!');
+    document.getElementById('complaintForm').reset();
+    // optionally close modal
+  } else {
+    alert('Complaint - Operation Failed!');
+  }
+});
+
+    </script>
+</body>
+</html>
